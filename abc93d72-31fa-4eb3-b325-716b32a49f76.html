@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guerrilla Concerto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dancing-queen:   #FFC8B0;
+    --yellow-sub:      #F4B608;
+    --kiss-quick:      #FF4F00;
+    --purple-haze:     #EBAEED;
+    --waterloo:        #B2D8D8;
+    --sweet-leaf:      #00492B;
+    --dreams:          #F7EFE2;
+    --black:           #000000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dreams);
+    color: var(--black);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* —————— HEADER —————— */
+  header {
+    padding: 2rem 4vw;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .logo {
+    font-family: 'Bowlby One', sans-serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .logo .star {
+    width: 0.85em;
+    height: 0.85em;
+    color: var(--kiss-quick);
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .logo:hover .star { transform: rotate(72deg); }
+  .logo svg { width: 100%; height: 100%; display: block; }
+
+  /* —————— PORTFOLIO —————— */
+  main {
+    padding: 2rem 0 8rem;
+  }
+
+  .work {
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    padding: 2rem 4vw;
+    transition: background 0.35s ease, color 0.35s ease, padding 0.4s cubic-bezier(0.22,1,0.36,1);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .work-title {
+    font-family: 'Bowlby One', sans-serif;
+    font-size: clamp(3rem, 11vw, 11rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.015em;
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    transform-origin: left center;
+  }
+
+  .work-meta {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .work-meta .arrow {
+    font-family: 'Bowlby One', sans-serif;
+    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  /* Per-work hover colors */
+  .work.csi:hover    { background: var(--kiss-quick);  color: var(--dreams); }
+  .work.dg:hover     { background: var(--sweet-leaf);  color: var(--dancing-queen); }
+  .work.byob:hover   { background: var(--yellow-sub);  color: var(--black); }
+  .work.aurora:hover { background: var(--purple-haze); color: var(--black); }
+  .work.diaries:hover { background: var(--waterloo);   color: var(--black); }
+
+  .work:hover .work-title {
+    transform: translateX(0.5rem);
+  }
+  .work:hover .work-meta { opacity: 1; }
+  .work:hover .work-meta .arrow { transform: translateX(0.6rem); }
+
+  /* —————— RESPONSIVE —————— */
+  @media (max-width: 800px) {
+    header { padding: 1.5rem 5vw; }
+    .work { padding: 1.5rem 5vw; }
+    .work-title { font-size: clamp(2.5rem, 14vw, 5rem); }
+    .work-meta { gap: 1rem; font-size: 0.75rem; letter-spacing: 0.1em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">
+    <span class="star" aria-hidden="true">
+      <svg viewBox="-10 -10 20 20"><path fill="currentColor" d="M 0 -9 L 2 -2 L 9 0 L 2 2 L 0 9 L -2 2 L -9 0 L -2 -2 Z"/></svg>
+    </span>
+    Guerrilla Concerto
+  </a>
+</header>
+
+<main>
+
+  <a class="work csi" href="https://carnivalsociety.org">
+    <h2 class="work-title">Carnival Society</h2>
+    <div class="work-meta">
+      <span>The costumed one</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+  </a>
+
+  <a class="work dg" href="https://divinersguild.net">
+    <h2 class="work-title">Diviner's Guild</h2>
+    <div class="work-meta">
+      <span>The quiet one</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+  </a>
+
+  <a class="work byob" href="#">
+    <h2 class="work-title">BYO Boombox</h2>
+    <div class="work-meta">
+      <span>The loud one</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+  </a>
+
+  <a class="work aurora" href="#">
+    <h2 class="work-title">Aurora</h2>
+    <div class="work-meta">
+      <span>The slow one</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+  </a>
+
+</main>
+
+</body>
+</html>
