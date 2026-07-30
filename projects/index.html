@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Guerrilla Concerto</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dancing-queen: #FFC8B0;
+    --yellow-sub:    #F4B608;
+    --kiss-quick:    #FF4F00;
+    --purple-haze:   #EBAEED;
+    --waterloo:      #B2D8D8;
+    --sweet-leaf:    #00492B;
+    --dreams:        #F7EFE2;
+    --black:         #000000;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--dreams); color: var(--black);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  header {
+    padding: 1.5rem 4vw;
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.75rem;
+  }
+  .logo {
+    font-family: 'Bowlby One', sans-serif;
+    font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+    text-decoration: none; color: var(--black);
+  }
+  .subtitle {
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+    opacity: 0.6;
+  }
+  main {
+    padding: 0 4vw 4rem;
+    max-width: 72rem; margin: 0 auto;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .card {
+    display: block; text-decoration: none; color: var(--black);
+    background: #fff; border: 2px solid var(--black);
+    border-radius: 0.75rem; padding: 1.25rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--kiss-quick);
+  }
+  .card-title {
+    font-family: 'Bowlby One', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    word-break: break-word;
+  }
+  .card-desc {
+    font-size: 0.85rem; opacity: 0.75; margin-bottom: 0.75rem;
+    min-height: 1.2rem;
+  }
+  .card-meta {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge {
+    padding: 0.15rem 0.5rem; border-radius: 999px; font-weight: 600;
+  }
+  .badge.private { background: var(--purple-haze); }
+  .badge.public { background: var(--waterloo); }
+  .badge.archived { background: #ddd; }
+  .badge.lang { background: var(--yellow-sub); }
+  .state {
+    margin-top: 3rem; font-size: 0.9rem; opacity: 0.7;
+  }
+  .back {
+    display: inline-block; margin-top: 2rem; font-size: 0.8rem;
+    text-decoration: underline; color: var(--black);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Guerrilla Concerto</a>
+  <span class="subtitle">Projects</span>
+</header>
+
+<main>
+  <div id="state" class="state">Loading repos…</div>
+  <div id="grid" class="grid"></div>
+  <a class="back" href="/">&larr; Back home</a>
+</main>
+
+<script>
+  fetch('/projects/api/repos')
+    .then(function (res) {
+      if (!res.ok) throw new Error('status ' + res.status);
+      return res.json();
+    })
+    .then(function (repos) {
+      var state = document.getElementById('state');
+      var grid = document.getElementById('grid');
+      if (!repos.length) {
+        state.textContent = 'No repos found.';
+        return;
+      }
+      state.remove();
+      repos.forEach(function (r) {
+        var a = document.createElement('a');
+        a.className = 'card';
+        a.href = r.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+
+        var title = document.createElement('div');
+        title.className = 'card-title';
+        title.textContent = r.name;
+
+        var desc = document.createElement('div');
+        desc.className = 'card-desc';
+        desc.textContent = r.description || '';
+
+        var meta = document.createElement('div');
+        meta.className = 'card-meta';
+
+        var vis = document.createElement('span');
+        vis.className = 'badge ' + (r.private ? 'private' : 'public');
+        vis.textContent = r.private ? 'Private' : 'Public';
+        meta.appendChild(vis);
+
+        if (r.archived) {
+          var arc = document.createElement('span');
+          arc.className = 'badge archived';
+          arc.textContent = 'Archived';
+          meta.appendChild(arc);
+        }
+
+        if (r.language) {
+          var lang = document.createElement('span');
+          lang.className = 'badge lang';
+          lang.textContent = r.language;
+          meta.appendChild(lang);
+        }
+
+        a.appendChild(title);
+        a.appendChild(desc);
+        a.appendChild(meta);
+        grid.appendChild(a);
+      });
+    })
+    .catch(function (err) {
+      document.getElementById('state').textContent = 'Could not load repos (' + err.message + ').';
+    });
+</script>
+
+</body>
+</html>
