@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sponsorship Dossier — Guerrilla Concerto</title>
+<style>
+  :root {
+    --paper: #EAE4D6;
+    --paper-raised: #F4EFE3;
+    --ink: #241F1A;
+    --ink-soft: #55504A;
+    --sage: #4C5940;
+    --chambray: #34495B;
+    --ochre: #8F6423;
+    --rust: #7A3E28;
+    --line: rgba(36,31,26,.18);
+    --line-soft: rgba(36,31,26,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1B1815;
+      --paper-raised: #221E19;
+      --ink: #EAE3D4;
+      --ink-soft: #B4AA9B;
+      --sage: #92A67D;
+      --chambray: #7FA3BC;
+      --ochre: #D9A94A;
+      --rust: #C97A56;
+      --line: rgba(234,227,212,.16);
+      --line-soft: rgba(234,227,212,.08);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1B1815;
+    --paper-raised: #221E19;
+    --ink: #EAE3D4;
+    --ink-soft: #B4AA9B;
+    --sage: #92A67D;
+    --chambray: #7FA3BC;
+    --ochre: #D9A94A;
+    --rust: #C97A56;
+    --line: rgba(234,227,212,.16);
+    --line-soft: rgba(234,227,212,.08);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif; }
+  .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+
+  /* Masthead */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+    text-wrap: balance;
+  }
+  .dek {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 0 1.1rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+  .meta-row span b { color: var(--ink); font-weight: 600; }
+
+  /* Callout */
+  .callout {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--sage);
+    background: var(--paper-raised);
+    padding: 1rem 1.25rem;
+    margin: 1.75rem 0 2.5rem;
+    font-size: 0.94rem;
+  }
+  .callout p { margin: 0.3rem 0; }
+  .callout .callout-title {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin: 0 0 0.5rem;
+  }
+
+  /* Sections */
+  section.category { margin-top: 3rem; }
+  .cat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  .cat-code {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--chambray);
+    border: 1px solid var(--chambray);
+    border-radius: 3px;
+    padding: 0.1rem 0.4rem;
+  }
+  .cat-head h2 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .cat-note {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0.6rem 0 1rem;
+    max-width: 68ch;
+  }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  thead th {
+    text-align: left;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding: 0.4rem 0.7rem;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 0.65rem 0.7rem;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: 1px solid var(--line); }
+  .brand-name { font-weight: 600; white-space: nowrap; }
+  .hq {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .hq.local { color: var(--sage); font-weight: 600; }
+  .why { color: var(--ink); max-width: 34ch; }
+
+  .tier {
+    display: inline-block;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    border: 1px solid currentColor;
+  }
+  .tier.start { color: var(--sage); }
+  .tier.grow { color: var(--chambray); }
+  .tier.dream { color: var(--ochre); }
+  .tier.partner { color: var(--rust); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    max-width: 68ch;
+  }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 640px) {
+    .why { max-width: none; }
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr {
+      border-bottom: 1px solid var(--line);
+      padding: 0.75rem 0;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { border-bottom: none; padding: 0.15rem 0; }
+    tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 0.4rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Working document — sponsorship &amp; partnership targets</p>
+    <h1>Sponsorship Dossier</h1>
+    <p class="dek">Candidate brands for the wildlife-on-horseback film project, sorted by category and how realistic a first "yes" is. Built from the Wyoming wild horse expedition footage as proof of concept.</p>
+    <div class="meta-row">
+      <span>base: <b>Boulder / Denver, CO</b></span>
+      <span>proof of concept: <b>Wyoming wild horse expedition</b></span>
+      <span>updated: <b>Aug 2026</b></span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="callout-title">Regional advantage</p>
+    <p>An unusual number of outdoor and equestrian brands are headquartered within a few hours of Boulder/Denver — Steamboat Springs, Fort Collins, Lafayette, Cortez, and Jackson Hole all show up below. Brands marked <span class="hq local">local</span> are close enough for an in-person visit instead of a cold email, which is almost always the faster route to a first deal.</p>
+  </div>
+
+  <!-- EQUESTRIAN -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">EQ</span>
+      <h2>Equestrian &amp; Tack</h2>
+    </div>
+    <p class="cat-note">Gear brands that outfit the riding itself — the most direct fit for expedition footage, and the category least likely to have already been pitched a "wildlife filmmaker on horseback" angle.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Kerrits Equestrian Apparel</td>
+            <td class="hq local" data-label="HQ">Steamboat Springs, CO</td>
+            <td class="why" data-label="Why it fits">Trail/adventure riding apparel line, actively uses rider-creator content.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Noble Outfitters</td>
+            <td class="hq local" data-label="HQ">Windsor, CO</td>
+            <td class="why" data-label="Why it fits">Apparel + tack with an existing ambassador program; Front Range neighbor.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">EasyCare / EasyBoot</td>
+            <td class="hq" data-label="HQ">Tucson, AZ</td>
+            <td class="why" data-label="Why it fits">Hoof boots built for backcountry trail riding — the exact terrain of the footage.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Kensington Protective Products</td>
+            <td class="hq" data-label="HQ">Guilford, CT</td>
+            <td class="why" data-label="Why it fits">Fly gear and protective wear, sponsors trail and endurance riders.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Weaver Leather</td>
+            <td class="hq" data-label="HQ">Mount Hope, OH</td>
+            <td class="why" data-label="Why it fits">Tack and leather goods, sponsors clinicians and trail riders.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Cactus Saddlery</td>
+            <td class="hq" data-label="HQ">Greenville, TX</td>
+            <td class="why" data-label="Why it fits">Western tack with a strong ranch/trail identity.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">SmartPak</td>
+            <td class="hq" data-label="HQ">Plymouth, MA</td>
+            <td class="why" data-label="Why it fits">Runs a creator/affiliate program for riders across disciplines.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Ariat International</td>
+            <td class="hq" data-label="HQ">Union City, CA</td>
+            <td class="why" data-label="Why it fits">The category's biggest lifestyle name; ambassador program exists but is competitive.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OUTDOOR: COLORADO -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">OUT · CO</span>
+      <h2>Outdoor Gear — Colorado-Based</h2>
+    </div>
+    <p class="cat-note">Front Range and mountain-town outdoor brands, worth targeting first purely on geography.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Kühl</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Apparel built around a mountain-heritage story — same story you're telling.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Big Agnes</td>
+            <td class="hq local" data-label="HQ">Steamboat Springs, CO</td>
+            <td class="why" data-label="Why it fits">Tents and sleeping bags — expedition camp content writes itself.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Sherpa Adventure Gear</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Storytelling-driven apparel brand, small enough for a founder conversation.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Topo Designs</td>
+            <td class="hq local" data-label="HQ">Denver, CO</td>
+            <td class="why" data-label="Why it fits">Bags and apparel, known for easy small-brand collabs.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Yakima</td>
+            <td class="hq local" data-label="HQ">Lafayette, CO</td>
+            <td class="why" data-label="Why it fits">Rack systems for gear transport — fits the "getting to the trailhead" part of the story.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Voormi</td>
+            <td class="hq local" data-label="HQ">Pagosa Springs, CO</td>
+            <td class="why" data-label="Why it fits">Wool apparel, small team, founder-accessible.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Osprey Packs</td>
+            <td class="hq local" data-label="HQ">Cortez, CO</td>
+            <td class="why" data-label="Why it fits">Established ambassador program, Colorado roots.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OUTDOOR: NATIONAL -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">OUT · NAT</span>
+      <h2>Outdoor Gear — National</h2>
+    </div>
+    <p class="cat-note">Bigger apparel and gear names outside Colorado, including one that's practically in the expedition's backyard.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Stio</td>
+            <td class="hq" data-label="HQ">Jackson, WY</td>
+            <td class="why" data-label="Why it fits">Mountain lifestyle apparel headquartered in the same state as the footage.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Cotopaxi</td>
+            <td class="hq" data-label="HQ">Salt Lake City, UT</td>
+            <td class="why" data-label="Why it fits">Mission-driven, colorful brand with active creator partnerships.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Mountain Hardwear</td>
+            <td class="hq" data-label="HQ">Richmond, CA</td>
+            <td class="why" data-label="Why it fits">Technical apparel with a formal ambassador track.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Danner</td>
+            <td class="hq" data-label="HQ">Portland, OR</td>
+            <td class="why" data-label="Why it fits">Boots built for the exact rough terrain in expedition footage.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Filson</td>
+            <td class="hq" data-label="HQ">Seattle, WA</td>
+            <td class="why" data-label="Why it fits">Heritage rugged-outdoor brand with a long history of horseback imagery.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Carhartt</td>
+            <td class="hq" data-label="HQ">Dearborn, MI</td>
+            <td class="why" data-label="Why it fits">Workwear with genuine ranch/trail crossover appeal.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Patagonia</td>
+            <td class="hq" data-label="HQ">Ventura, CA</td>
+            <td class="why" data-label="Why it fits">Runs environmental storytelling/film grants rather than typical sponsorship — different pitch, still worth it.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OPTICS -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">OPT</span>
+      <h2>Camera, Optics &amp; Drone</h2>
+    </div>
+    <p class="cat-note">The tools behind the footage itself — often the easiest sell, since your content is free advertising for what their gear can capture.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Peak Design</td>
+            <td class="hq" data-label="HQ">San Francisco, CA</td>
+            <td class="why" data-label="Why it fits">Camera bags and straps, indie-creator friendly, small-batch collabs common.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Vortex Optics</td>
+            <td class="hq" data-label="HQ">Barneveld, WI</td>
+            <td class="why" data-label="Why it fits">Binoculars/spotting scopes for wildlife viewing, active pro-staff program.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">GoPro</td>
+            <td class="hq" data-label="HQ">San Mateo, CA</td>
+            <td class="why" data-label="Why it fits">Athlete/creator program built for exactly this kind of action footage.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Sony Alpha</td>
+            <td class="hq" data-label="HQ">San Diego, CA (Alpha division)</td>
+            <td class="why" data-label="Why it fits">Application-based creator community, high production value expected.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">DJI</td>
+            <td class="hq" data-label="HQ">Shenzhen, China</td>
+            <td class="why" data-label="Why it fits">Drone footage of wild horse herds is a strong portfolio piece; usually pitched via regional resellers.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">LIFE</span>
+      <h2>Food, Drink &amp; Recovery</h2>
+    </div>
+    <p class="cat-note">Boulder/Fort Collins has an unusually dense cluster of outdoor-nutrition brands — good for product trades and small cash deals early on.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Skratch Labs</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Hydration mixes for endurance athletes — multi-day expedition fit.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Nuun</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Electrolyte brand, frequent small-creator gifting and affiliate deals.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Justin's Nut Butter</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Trail food, founder-accessible brand with local roots.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Upslope Brewing</td>
+            <td class="hq local" data-label="HQ">Boulder, CO</td>
+            <td class="why" data-label="Why it fits">Local brewery, community-event sponsorship budget.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">New Belgium Brewing</td>
+            <td class="hq local" data-label="HQ">Fort Collins, CO</td>
+            <td class="why" data-label="Why it fits">Larger CO brewery with an outdoor/adventure marketing history.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">YETI</td>
+            <td class="hq" data-label="HQ">Austin, TX</td>
+            <td class="why" data-label="Why it fits">Coolers/drinkware, one of the biggest outdoor-storytelling ad budgets in the category.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONSERVATION -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">CONS</span>
+      <h2>Wild Horse &amp; Conservation Orgs</h2>
+    </div>
+    <p class="cat-note">Not cash sponsors — these are credibility and distribution partners. A co-sign from an advocacy org opens doors with brands that care about the ethics of the footage.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">The Cloud Foundation</td>
+            <td class="hq local" data-label="HQ">Colorado Springs, CO</td>
+            <td class="why" data-label="Why it fits">Wild horse advocacy org, Colorado-based, natural co-production partner.</td>
+            <td data-label="Tier"><span class="tier partner">Partnership</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">American Wild Horse Conservation</td>
+            <td class="hq" data-label="HQ">Washington, DC</td>
+            <td class="why" data-label="Why it fits">National advocacy reach, could amplify or license footage.</td>
+            <td data-label="Tier"><span class="tier partner">Partnership</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Return to Freedom</td>
+            <td class="hq" data-label="HQ">Lompoc, CA</td>
+            <td class="why" data-label="Why it fits">Wild horse sanctuary and advocacy, active storytelling arm.</td>
+            <td data-label="Tier"><span class="tier partner">Partnership</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">National Geographic Society</td>
+            <td class="hq" data-label="HQ">Washington, DC</td>
+            <td class="why" data-label="Why it fits">Explorer/storytelling grants exist, but highly competitive.</td>
+            <td data-label="Tier"><span class="tier dream">Dream</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TOURISM -->
+  <section class="category">
+    <div class="cat-head">
+      <span class="cat-code">TOUR</span>
+      <h2>Tourism Boards &amp; DMOs</h2>
+    </div>
+    <p class="cat-note">Often overlooked, but destination marketing organizations regularly pay for or license exactly this kind of footage, and Wyoming already has a stake in what you shot.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Brand</th><th>HQ</th><th>Why it fits</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="brand-name" data-label="Brand">Wyoming Office of Tourism</td>
+            <td class="hq" data-label="HQ">Cheyenne, WY</td>
+            <td class="why" data-label="Why it fits">Footage was shot in-state; strong content-licensing and co-marketing angle.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Local/regional WY travel councils</td>
+            <td class="hq" data-label="HQ">e.g. Sheridan, Jackson Hole</td>
+            <td class="why" data-label="Why it fits">Smaller DMOs often have direct creator-funding programs.</td>
+            <td data-label="Tier"><span class="tier start">Start here</span></td>
+          </tr>
+          <tr>
+            <td class="brand-name" data-label="Brand">Colorado Tourism Office</td>
+            <td class="hq" data-label="HQ">Denver, CO</td>
+            <td class="why" data-label="Why it fits">Home-state co-marketing once there's a Colorado-shot piece to pair with the Wyoming footage.</td>
+            <td data-label="Tier"><span class="tier grow">Grow into</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Compiled from general industry knowledge, not live outreach data — HQ locations, ambassador programs, and contact points change often. Verify each brand's current sponsorship or ambassador program before pitching.
+    <br><br>
+    <a href="/projects">&larr; Back to projects</a>
+  </footer>
+
+</div>
+</body>
+</html>

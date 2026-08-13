@@ -98,8 +98,16 @@
 </header>
 
 <main>
+  <div class="grid">
+    <a class="card" href="/projects/sponsor-dossier.html">
+      <div class="card-title">Sponsorship Dossier</div>
+      <div class="card-desc">Brand partnership targets for the wildlife-on-horseback film project.</div>
+      <div class="card-meta"><span class="badge public">Doc</span></div>
+    </a>
+  </div>
+
   <div id="state" class="state">Loading repos…</div>
-  <div id="grid" class="grid"></div>
+  <div id="grid2" class="grid"></div>
   <a class="back" href="/">&larr; Back home</a>
 </main>
 
@@ -111,7 +119,7 @@
     })
     .then(function (repos) {
       var state = document.getElementById('state');
-      var grid = document.getElementById('grid');
+      var grid = document.getElementById('grid2');
       if (!repos.length) {
         state.textContent = 'No repos found.';
         return;
